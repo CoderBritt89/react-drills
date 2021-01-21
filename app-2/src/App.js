@@ -1,26 +1,38 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends Component {
+constructor(){
+super()
+this.state = {
+sentence: ['I', 'love', 'to', 'code', 'it', 'is', 'challenging', 'and', 'fun']
+}
+
+
+}
+
+
+render (){
+  let sentenceToDisplay = this.state.sentence.map((elem, index)=>{
+return <h2 key={index}>{elem}</h2>
+
+
+  })
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>{sentenceToDisplay}</h2>
+      
     </div>
+    
   );
+
+
+
+}
+  
 }
 
 export default App;
